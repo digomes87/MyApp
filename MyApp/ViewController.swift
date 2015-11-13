@@ -10,16 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBOutlet weak var user: UITextField!
+    @IBOutlet weak var pass: UIImageView!
+    
+    @IBAction func LoginPress(sender: UIButton) {
+        self.user.resignFirstResponder()
+        self.pass.resignFirstResponder()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    //this function is always user for hidden keyboard
+    //you will be user this function,when person click in anywar pat of App
+    //keyborad hidden
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
-
-
 }
 
